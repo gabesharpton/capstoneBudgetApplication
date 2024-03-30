@@ -12,18 +12,24 @@ public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int personID;
+
     int income;
     int savings;
     String yearlyGoal;
+    String personName;
 
     public Person() {
 
     }
-    public Person(int personID, int income, int savings, String yearlyGoal) {
+
+
+
+    public Person(int personID, int income, int savings, String yearlyGoal, String personName) {
         this.personID = personID;
         this.income = income;
         this.savings = savings;
         this.yearlyGoal = yearlyGoal;
+        this.personName =  personName;
     }
 
     public int getPersonID() {
@@ -56,6 +62,14 @@ public class Person implements Serializable {
 
     public void setYearlyGoal(String yearlyGoal) {
         this.yearlyGoal = yearlyGoal;
+    }
+
+    public String getPersonName() {
+        return personName;
+    }
+
+    public void setPersonName(String personName) {
+        this.personName = personName;
     }
 
 
