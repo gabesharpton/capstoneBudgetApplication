@@ -1,6 +1,10 @@
 package com.example.MyBudget.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
 import java.io.Serializable;
 
 @Entity
@@ -10,8 +14,11 @@ public class Bills implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int billID;
+    @Min(value = 0,message = "Must be larger than 0")
     int billAmount;
+    @NotNull
     String billName;
+    @Pattern(regexp = "^(0[1-9]|1[0-2])\\/(0[1-9]|[12][0-9]|3[01])$")
     String billDate;
 
     public Bills() {}

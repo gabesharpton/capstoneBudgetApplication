@@ -18,7 +18,7 @@
     <p>Bill Amount <input type="text" th:field="*{billAmount}" placeholder= "Amount" class="form-control mb-4 col-4"/></p>
 
 
-    <p>Bill Date <input type="text" th:field="*{billDate}" placeholder="Bill Date" class="form-control mb-4 col-4"/></p>
+    <p>Bill Date (MM/DD) <input type="text" th:field="*{billDate}" placeholder="Bill Date" class="form-control mb-4 col-4"/></p>
 
     <div th:if="${#fields.hasAnyErrors()}"><ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul></div>
     <p><input type="submit" value="Submit" /></p>

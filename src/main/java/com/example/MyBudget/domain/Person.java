@@ -1,6 +1,9 @@
 package com.example.MyBudget.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+
 import java.io.Serializable;
 
 @Entity
@@ -11,8 +14,11 @@ public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int personID;
+    @Min(value = 0,message = "Must be larger than 0")
     int income;
+    @Min(value = 0,message = "Must be larger than 0")
     int savings;
+    @NotNull
     String yearlyGoal;
     String personName;
 
