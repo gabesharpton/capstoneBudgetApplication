@@ -1,11 +1,8 @@
 package com.example.MyBudget.domain;
 
 import jakarta.persistence.*;
-import org.hibernate.mapping.PrimaryKey;
-
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -19,13 +16,8 @@ public class Budget implements Serializable {
     int balance;
     @Column(unique = true)
     String monthYear;
-//    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "billID")
-//    Set<Bills> bills = new HashSet<>();
 
-
-    public Budget() {
-
-    }
+    public Budget() {}
 
     public Budget(int budgetID, int personID, int balance, String monthYear) {
         this.budgetID = budgetID;
@@ -65,15 +57,5 @@ public class Budget implements Serializable {
     public void setMonthYear(String monthYear) {
         this.monthYear = monthYear;
     }
-
-//    public Set<Bills> getBills() {
-//        return bills;
-//    }
-//
-//    public void setBills(Set<Bills> bills) {
-//        this.bills = bills;
-//    }
-
-
 
 }

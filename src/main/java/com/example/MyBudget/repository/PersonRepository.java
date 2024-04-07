@@ -1,6 +1,5 @@
 package com.example.MyBudget.repository;
 
-import com.example.MyBudget.domain.Bills;
 import com.example.MyBudget.domain.Person;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

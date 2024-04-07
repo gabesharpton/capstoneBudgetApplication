@@ -1,7 +1,6 @@
 package com.example.MyBudget.domain;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 
 @Entity
@@ -15,9 +14,7 @@ public class Bills implements Serializable {
     String billName;
     String billDate;
 
-    public Bills() {
-
-    }
+    public Bills() {}
     public Bills(int billID, int billAmount, String billName, String billDate) {
         this.billID = billID;
         this.billAmount = billAmount;
@@ -56,6 +53,5 @@ public class Bills implements Serializable {
     public void setBillDate(String billDate) {
         this.billDate = billDate;
     }
-
 
 }

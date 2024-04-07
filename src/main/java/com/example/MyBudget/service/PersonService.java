@@ -1,8 +1,6 @@
 package com.example.MyBudget.service;
 
-import com.example.MyBudget.domain.Budget;
 import com.example.MyBudget.domain.Person;
-
 import java.util.List;
 
 public interface PersonService {

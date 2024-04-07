@@ -4,9 +4,9 @@ import com.example.MyBudget.domain.Budget;
 import com.example.MyBudget.repository.BudgetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class BudgetServiceImpl implements BudgetService{
     private BudgetRepository budgetRepository;
@@ -26,8 +26,7 @@ public class BudgetServiceImpl implements BudgetService{
             theBudget = result.get();
         }
         else {
-            // we didn't find the product id
-            throw new RuntimeException("Did not find bill id - " + theID);
+            throw new RuntimeException("Did not find budget id - " + theID);
         }
 
         return theBudget;

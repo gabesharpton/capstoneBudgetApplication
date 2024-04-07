@@ -9,15 +9,13 @@
 </head>
 <body>
 
-<h2>This is the add budget page</h2>
-
 <form action="#" th:action="@{/showFormAddBudget}" th:object="${budget}" method="POST">
     <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{budgetID}"/></p>
 
-    <p><input type="text" th:field="*{balance}" placeholder="Balance" class="form-control mb-4 col-4"/></p>
+    <p>Balance <input type="text" th:field="*{balance}" placeholder="Balance" class="form-control mb-4 col-4"/></p>
 
-    <p><input type="text" th:field="*{monthYear}" placeholder= "Month/Year" class="form-control mb-4 col-4"/></p>
+    <p>Month/Year <input type="text" th:field="*{monthYear}" placeholder= "Month/Year" class="form-control mb-4 col-4"/></p>
 
 
     <div th:if="${#fields.hasAnyErrors()}"><ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul></div>

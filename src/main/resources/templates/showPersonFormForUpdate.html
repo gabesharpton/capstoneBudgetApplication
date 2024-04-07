@@ -9,15 +9,15 @@
 </head>
 <body>
 
-<h2>This is the update person page</h2>
+<h2>Update your personal information</h2>
 
 <form action="#" th:action="@{/showPersonFormForUpdate}" th:object="${person}" method="POST">
     <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{personID}"/></p>
 
-    <p><input type="text" th:field="*{savings}" placeholder="Balance" class="form-control mb-4 col-4"/></p>
+    <p>Personal Savings <input type="text" th:field="*{savings}" placeholder="Balance" class="form-control mb-4 col-4"/></p>
 
-    <p><input type="text" th:field="*{yearlyGoal}" placeholder= "Month/Year" class="form-control mb-4 col-4"/></p>
+    <p>Yearly Goal<input type="text" th:field="*{yearlyGoal}" placeholder= "Yearly Goal" class="form-control mb-4 col-4"/></p>
 
 
     <div th:if="${#fields.hasAnyErrors()}"><ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul></div>

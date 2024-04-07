@@ -12,11 +12,9 @@ import com.example.MyBudget.service.BudgetService;
 import com.example.MyBudget.service.PersonService;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
-
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.List;
 
 
@@ -25,7 +23,6 @@ public class homeScreenController {
     public PersonRepository personRepository;
     public BillsRepository billsRepository;
     public BudgetRepository budgetRepository;
-
     private PersonService personService;
     private BillService billService;
     private BudgetService budgetService;
