@@ -9,5 +9,6 @@ public interface BudgetService {
     public Budget findById(int theID);
 
     public List<Budget> listAll(String keyword);
+    public void save(Budget theBudget);
 
 }

@@ -2,12 +2,15 @@ package com.example.MyBudget.service;
 
 import com.example.MyBudget.domain.Budget;
 import com.example.MyBudget.repository.BudgetRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class BudgetServiceImpl implements BudgetService{
     private BudgetRepository budgetRepository;
+    @Autowired
     public BudgetServiceImpl(BudgetRepository budgetRepository) { this.budgetRepository = budgetRepository;}
     public List<Budget> findAll() { return (List<Budget>) budgetRepository.findAll();}
 
@@ -36,6 +39,9 @@ public class BudgetServiceImpl implements BudgetService{
             return budgetRepository.search(keyword);
         }
         return (List<Budget>) budgetRepository.findAll();
+    }
+    public void save(Budget theBudget){
+        budgetRepository.save(theBudget);
     }
 
 }

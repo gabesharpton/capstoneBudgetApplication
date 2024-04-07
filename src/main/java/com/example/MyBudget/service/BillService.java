@@ -9,6 +9,7 @@ public interface BillService {
 
     public List<Bills> findAll();
     public Bills findById(int theID);
+    public void save(Bills theBill);
 
     public List<Bills> listAll(String keyword);
 

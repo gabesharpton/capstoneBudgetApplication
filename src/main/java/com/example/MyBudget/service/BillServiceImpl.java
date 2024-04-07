@@ -2,13 +2,16 @@ package com.example.MyBudget.service;
 
 import com.example.MyBudget.domain.Bills;
 import com.example.MyBudget.repository.BillsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class BillServiceImpl implements BillService{
 
     private BillsRepository billsRepository;
+//    @Autowired
     public BillServiceImpl(BillsRepository billsRepository) { this.billsRepository = billsRepository;}
     public List<Bills> findAll() { return (List<Bills>) billsRepository.findAll();}
 
@@ -40,4 +43,8 @@ public class BillServiceImpl implements BillService{
         return (List<Bills>) billsRepository.findAll();
     }
 
+    @Override
+    public void save(Bills theBill) {
+        billsRepository.save(theBill);
+    }
 }

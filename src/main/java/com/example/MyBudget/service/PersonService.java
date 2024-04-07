@@ -1,5 +1,6 @@
 package com.example.MyBudget.service;
 
+import com.example.MyBudget.domain.Budget;
 import com.example.MyBudget.domain.Person;
 
 import java.util.List;
@@ -10,6 +11,6 @@ public interface PersonService {
     public Person findById(int theID);
 
     public List<Person> listAll(String keyword);
-
+    public void save(Person thePerson);
 
 }

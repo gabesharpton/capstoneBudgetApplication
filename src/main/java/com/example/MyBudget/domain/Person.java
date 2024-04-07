@@ -3,6 +3,8 @@ package com.example.MyBudget.domain;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="Person")
@@ -12,7 +14,6 @@ public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int personID;
-
     int income;
     int savings;
     String yearlyGoal;
@@ -71,6 +72,7 @@ public class Person implements Serializable {
     public void setPersonName(String personName) {
         this.personName = personName;
     }
+
 
 
 }

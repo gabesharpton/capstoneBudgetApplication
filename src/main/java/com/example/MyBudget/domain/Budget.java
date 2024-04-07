@@ -4,10 +4,11 @@ import jakarta.persistence.*;
 import org.hibernate.mapping.PrimaryKey;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-
 @Table(name="Budget")
 public class Budget implements Serializable {
 
@@ -16,7 +17,10 @@ public class Budget implements Serializable {
     int budgetID;
     int personID;
     int balance;
+    @Column(unique = true)
     String monthYear;
+//    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "billID")
+//    Set<Bills> bills = new HashSet<>();
 
 
     public Budget() {
@@ -61,6 +65,14 @@ public class Budget implements Serializable {
     public void setMonthYear(String monthYear) {
         this.monthYear = monthYear;
     }
+
+//    public Set<Bills> getBills() {
+//        return bills;
+//    }
+//
+//    public void setBills(Set<Bills> bills) {
+//        this.bills = bills;
+//    }
 
 
 

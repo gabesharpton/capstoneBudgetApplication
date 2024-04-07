@@ -1,14 +1,18 @@
 package com.example.MyBudget.service;
 
+import com.example.MyBudget.domain.Bills;
 import com.example.MyBudget.domain.Person;
 import com.example.MyBudget.repository.PersonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class PersonServiceImpl implements PersonService{
 
     private PersonRepository personRepository;
+//    @Autowired
     public PersonServiceImpl(PersonRepository personRepository) { this.personRepository = personRepository;}
     public List<Person> findAll() { return (List<Person>) personRepository.findAll();}
 
@@ -37,5 +41,9 @@ public class PersonServiceImpl implements PersonService{
             return personRepository.search(keyword);
         }
         return (List<Person>) personRepository.findAll();
+    }
+    @Override
+    public void save(Person thePerson) {
+        personRepository.save(thePerson);
     }
 }
