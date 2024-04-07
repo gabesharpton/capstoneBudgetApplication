@@ -55,4 +55,11 @@ public class addBillController {
         theModel.addAttribute("bills", thisBill);
         return "showFormAddBills";
     }
+    @GetMapping("/deleteBill")
+    public String deleteBill( @RequestParam("billID") int theID,  Model theModel){
+        BillService repo = context.getBean(BillServiceImpl.class);
+        repo.deleteById(theID);
+        return "confirmDelete";
+    }
+
 }

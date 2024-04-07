@@ -2,6 +2,8 @@ package com.example.MyBudget.controllers;
 
 import com.example.MyBudget.domain.Budget;
 import com.example.MyBudget.repository.BudgetRepository;
+import com.example.MyBudget.service.BillService;
+import com.example.MyBudget.service.BillServiceImpl;
 import com.example.MyBudget.service.BudgetService;
 import com.example.MyBudget.service.BudgetServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,11 +46,19 @@ public class addBudgetController {
         repo.save(budget);
         return "confirmationAddBudget";
     }
+
     @GetMapping("/showBudgetFormForUpdate")
     public String showBudgetFormForUpdate(@RequestParam("budgetID") int theID, Model theModel){
         BudgetService repo = context.getBean(BudgetServiceImpl.class);
         Budget thisBudget = repo.findById(theID);
         theModel.addAttribute("budget", thisBudget);
         return "showFormAddBudget";
+    }
+
+    @GetMapping("/deleteBudget")
+    public String deleteBudget( @RequestParam("budgetID") int theID,  Model theModel){
+        BudgetService repo = context.getBean(BudgetServiceImpl.class);
+        repo.deleteById(theID);
+        return "confirmDelete";
     }
 }

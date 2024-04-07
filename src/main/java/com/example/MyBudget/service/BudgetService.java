@@ -10,5 +10,6 @@ public interface BudgetService {
 
     public List<Budget> listAll(String keyword);
     public void save(Budget theBudget);
+    public void deleteById(int theID);
 
 }

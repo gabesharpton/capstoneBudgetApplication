@@ -19,7 +19,7 @@
     <tr>
         <th>Budget Amount</th>
         <th>Budget Month</th>
-        <th>Update / Delete Bill</th>
+        <th>Update / Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -28,7 +28,7 @@
         <td th:text="${tempBudget.monthYear}"></td>
         <td><a th:href="@{/showBudgetFormForUpdate(budgetID=${tempBudget.budgetID})}" class="btn btn-primary btn-sm mb-3">Update</a>
             <a th:href="@{/deleteBudget(budgetID=${tempBudget.budgetID})}" class="btn btn-primary btn-sm mb-3"
-               onclick="if(!(confirm('Are you sure you want to delete this bill?')))return false">Delete</a>
+               onclick="if(!(confirm('Are you sure you want to delete this budget?')))return false">Delete</a>
         </td>
     </tr>
     </tbody>

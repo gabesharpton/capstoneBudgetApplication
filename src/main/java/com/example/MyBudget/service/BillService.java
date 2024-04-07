@@ -11,6 +11,7 @@ public interface BillService {
     public Bills findById(int theID);
     public void save(Bills theBill);
 
+    public void deleteById(int theID);
     public List<Bills> listAll(String keyword);
 
 }

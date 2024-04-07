@@ -44,4 +44,10 @@ public class BudgetServiceImpl implements BudgetService{
         budgetRepository.save(theBudget);
     }
 
+    @Override
+    public void deleteById(int theID){
+        Long theIDL=(long)theID;
+        budgetRepository.deleteById(theIDL);
+    }
+
 }
