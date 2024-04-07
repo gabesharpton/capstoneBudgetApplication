@@ -35,14 +35,18 @@
 </table>
 <a th:href="@{/showFormAddBudget}" class="btn btn-primary btn-sm mb-3">Add Budget</a>
 
-<form th:action="@{/mainscreen}">
+<form th:action="@{/homescreen}">
     Filter Bills: <input type="text" name="billskeyword" id="billskeyword" size="50" th:value="${billskeyword}" required />
     &nbsp;
     <input type="submit" value="Search" />
     &nbsp;
     <input type="button" value="Clear" id="btnClearBills" onclick="clearSearch()" />
 </form>
-
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/}]]";
+    }
+</script>
 
 
 <table class="table table-bordered table-striped text-center">
