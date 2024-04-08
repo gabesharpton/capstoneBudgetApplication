@@ -30,17 +30,10 @@ public class BootStrapData implements CommandLineRunner {
         Bills newBill = new Bills(1,20,"Fake Rent","04/21");
         Bills newerBill = new Bills(2,30,"Fake Car note","04/23");
 
-
         budgetRepository.save(newBudget);
         personRepository.save(newPerson);
         billsRepository.save(newBill);
         billsRepository.save(newerBill);
-//        System.out.println("Budget count: "+ budgetRepository.count());
-//        System.out.println(budgetRepository.findAll());
-//
-//        System.out.println(personRepository.findAll());
-//        System.out.println("Bill count: "+ billsRepository.count());
-//        System.out.println(billsRepository.findAll());
 
     }
 }

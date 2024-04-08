@@ -1,7 +1,6 @@
 package com.example.MyBudget.controllers;
 
 import com.example.MyBudget.domain.Bills;
-import com.example.MyBudget.repository.BillsRepository;
 import com.example.MyBudget.service.BillService;
 import com.example.MyBudget.service.BillServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class addBillController {
     @Autowired
     private ApplicationContext context;
-    private BillService billService;
-    private BillsRepository billsRepository;
     private static Bills newBill;
     private Bills theNewBill;
 
