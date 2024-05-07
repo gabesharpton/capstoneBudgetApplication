@@ -1,5 +1,5 @@
-myBudget
----
+# capstoneBudgetApplication
+
 A full-stack web application, useful for creating and editing monthly budgets. This project was used for my Capstone Project at WGU for my bachelor's in Software Engineering.
 
 # Tech Stack
